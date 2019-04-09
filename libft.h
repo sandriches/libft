@@ -6,7 +6,7 @@
 /*   By: rcorke <marvin@codam.nl>                     +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/10 17:22:12 by rcorke        #+#    #+#                 */
-/*   Updated: 2019/02/22 14:23:54 by rcorke        ########   odam.nl         */
+/*   Updated: 2019/02/11 11:42:05 by rcorke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,7 @@ char				*ft_rplchars(char *s, char a, char c);
 void				ft_lstaddn(t_list *lst, t_list *new, size_t n);
 void				ft_lstaddend(t_list *lst, t_list *new);
 void				ft_lstpopend(t_list *lst);
+
+int					get_next_line(const int fd, char **line);
 
 #endif

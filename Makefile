@@ -6,7 +6,7 @@
 #    By: rcorke <marvin@codam.nl>                     +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/01/19 18:09:35 by rcorke        #+#    #+#                  #
-#    Updated: 2019/02/22 14:24:26 by rcorke        ########   odam.nl          #
+#    Updated: 2019/02/11 11:40:14 by rcorke        ########   odam.nl          #
 #                                                                              #
 #******************************************************************************#
 NAME = libft.a
@@ -21,7 +21,8 @@ ft_strtrim.c ft_strsplit.c ft_itoa.c ft_putchar.c ft_putstr.c ft_putendl.c \
 ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
 ft_isprime.c ft_pow.c ft_skipchars.c ft_rplchars.c ft_strrev.c ft_strcharloc.c \
-ft_strlow.c ft_strnjoin.c ft_strndup.c ft_lstlen.c ft_lstaddend.c ft_strcap.c
+ft_strlow.c ft_strnjoin.c ft_strndup.c ft_lstlen.c ft_lstaddend.c ft_strcap.c \
+get_next_line.c
 OBJECTS = $(SRCS:.c=.o)
 FLAGS = -Wall -Wextra -Werror
 LIBMAKER = ar rc
@@ -29,14 +30,14 @@ LIBMAKER = ar rc
 all: $(NAME)
 
 $(NAME):
-	@gcc $(FLAGS) -c -I./ $(SRCS)
-	@$(LIBMAKER) $(NAME) $(OBJECTS)
-	@ranlib $(NAME)
+	gcc $(FLAGS) -c -I./ $(SRCS)
+	$(LIBMAKER) $(NAME) $(OBJECTS)
+	ranlib $(NAME)
 
 clean:
-	@rm -rf $(OBJECTS) *~
+	rm -rf $(OBJECTS) *~
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
